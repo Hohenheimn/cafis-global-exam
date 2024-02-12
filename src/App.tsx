@@ -38,6 +38,10 @@ function App() {
   const [citiesList, setCitiesList] = useState<City[]>([]);
 
   useEffect(() => {
+    setSelectedState("");
+  }, [selectedCountry]);
+
+  useEffect(() => {
     const states = countriesData.data.find(
       (country) => country.name === selectedCountry
     )?.states;
@@ -139,8 +143,6 @@ function App() {
           ))}
         </Grid>
       </Container>
-      {/* <CounterRedux /> */}
-      {/* <CounterReducer /> */}
     </CustomTheme>
   );
 }
